@@ -9,18 +9,6 @@ Note that I'm using Vivado 2024.2 for this. I am unsure if other versions of
 this tool will work for this effort, given the _confusing_ Vivado release
 strategy. Maybe it will?
 
-## High Level Plan
-
-- [ ] Hello World
-    - [X] Import Verilog 
-    - [X] Import Constraints
-    - [X] Build
-    - [X] Generate 
-    - [o] Program
-- [ ] Importing IP
-- [ ] Configuring IP
-- [ ] 
-
 ## Hello World
 
 Let's say we want to turn on an LED:
