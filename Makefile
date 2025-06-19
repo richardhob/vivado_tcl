@@ -4,6 +4,9 @@ LIB_DIR := ./libs
 OPENOCD_URL := https://github.com/openocd-org/openocd/releases/download/v0.12.0/openocd-v0.12.0-i686-w64-mingw32.tar.gz
 OPENOCD := openocd
 OPENOCD_SCRIPTS := /usr/share/openocd/scripts
+VIVADO_WINDOWS := C:/Xilinx/Vivado/2024.2/bin/vivado
+VIVADO_LINUX := /tools/Xilinx/Vivado/2024.2/bin/vivado
+VIVADO := $(VIVADO_LINUX)
 
 LOCAL_SCRIPTS := ./openocd
 BOARD := zybo-z7-20.cfg
@@ -34,8 +37,14 @@ program_bit: $(BIT_FILE)
 		-c "zynq_program_bit $(abspath $(BIT_FILE));" \
 		-c "shutdown"
 
-VIVADO := C:/Xilinx/Vivado/2024.2/bin/vivado
-
 .PHONY: hello_world
 hello_world:
 	$(VIVADO) -mode batch -source ./src/tcl/hello_world.tcl
+
+.PHONY: clean
+clean:
+	rm -rf ./build
+	rm -rf ./.Xil
+	rm ./vivado*.jou
+	rm ./vivado*.log
+	rm ./clockInfo*.txt
