@@ -12,11 +12,11 @@ strategy. Maybe it will?
 ## High Level Plan
 
 - [ ] Hello World
-    - [ ] Import Verilog 
-    - [ ] Import Constraints
-    - [ ] Build
-    - [ ] Generate 
-    - [ ] Program
+    - [X] Import Verilog 
+    - [X] Import Constraints
+    - [X] Build
+    - [X] Generate 
+    - [o] Program
 - [ ] Importing IP
 - [ ] Configuring IP
 - [ ] 
@@ -158,3 +158,7 @@ And we can write the bitstream, as well as the netlist in Verilog format:
 write_verilog -force $outputDir/cpu_impl_netlist.v -mode timesim -sdf_anno true
 write_bitstream -force $outputDir/blinky.bit
 ```
+
+This works! Programming the bitstream is the next step.... but my kit is being
+dumb so I'll do that later. Next, we have to deal with Xilinx IPs.
+

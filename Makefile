@@ -41,6 +41,14 @@ program_bit: $(BIT_FILE)
 hello_world:
 	$(VIVADO) -mode batch -source ./src/tcl/hello_world.tcl
 
+.PHONY: generate-zynq
+generate-zynq:
+	$(VIVADO) -mode batch -source ./src/tcl/generate-zynq.tcl
+
+.PHONY: computer-board
+computer-board:
+	$(VIVADO) -mode batch -source ./src/tcl/computer-board.tcl
+
 .PHONY: clean
 clean:
 	rm -rf ./build
