@@ -19,6 +19,9 @@ if {[llength $bdFiles] != 0} {
 
 create_project -in_memory -part $partNum
 
-read_bd ./src/bd/computer.bd
+set boardFile "./vivado/cpu_ahb2/cpu_ahb2.srcs/sources_1/bd/cpu/cpu.bd"
+
+read_bd $boardFile
 read_xdc ./src/Zybo-Z7-Master.xdc
-generate_target all [get_ips]
+report_ip_status -file $outputDir/ip_status.txt
+generate_target all [get_files $boardFile]

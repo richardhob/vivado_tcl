@@ -6,7 +6,7 @@ OPENOCD := openocd
 OPENOCD_SCRIPTS := /usr/share/openocd/scripts
 VIVADO_WINDOWS := C:/Xilinx/Vivado/2024.2/bin/vivado
 VIVADO_LINUX := /tools/Xilinx/Vivado/2024.2/bin/vivado
-VIVADO := $(VIVADO_LINUX)
+VIVADO := $(VIVADO_WINDOWS)
 
 LOCAL_SCRIPTS := ./openocd
 BOARD := zybo-z7-20.cfg
